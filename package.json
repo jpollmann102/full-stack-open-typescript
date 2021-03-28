@@ -1,0 +1,21 @@
+{
+  "name": "full-stack-open-typescript",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts-node": "ts-node",
+    "calculateBmi": "ts-node -- bmiCalculator.ts",
+    "calculateExercises": "ts-node -- exerciseCalculator.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Pollmann",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37"
+  }
+}
