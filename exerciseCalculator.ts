@@ -26,7 +26,7 @@ const getRating = (totalHours:number, targetHours:number):Rating => {
   }
 }
 
-const calculateExercises = (dailyHours:number[], targetHours:number):Result => {
+export const calculateExercises = (dailyHours:number[], targetHours:number):Result => {
   const totalHours:number = dailyHours.reduce((a:number,b:number) => a + b, 0);
   const rating:Rating = getRating(totalHours, targetHours);
   return {

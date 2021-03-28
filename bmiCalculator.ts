@@ -1,4 +1,4 @@
-const calculateBmi = (height:number, weight:number):string => {
+export const calculateBmi = (height:number, weight:number):string => {
   const heightM:number = height / 100;
   const bmi:number = weight / (heightM * heightM);
   if(bmi === 15) return 'Very severely underweight';
@@ -11,7 +11,7 @@ const calculateBmi = (height:number, weight:number):string => {
   else return 'Very severely obese';
 }
 
-const height:number = Number(process.argv[2]);
-const weight:number = Number(process.argv[3]);
-
-console.log(calculateBmi(height, weight));
+// const height:number = Number(process.argv[2]);
+// const weight:number = Number(process.argv[3]);
+//
+// console.log(calculateBmi(height, weight));
