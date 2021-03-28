@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { calculateBmi } from './bmiCalculator';
+import { calculateExercises, ExerciseInput } from './exerciseCalculator';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,6 +22,17 @@ app.get('/bmi', (req, res) => {
 
   const bmi = calculateBmi(height, weight);
   return res.json({ height, weight, bmi });
+});
+
+app.post('/exercises', (req, res) => {
+  const body:ExerciseInput = req.body;
+
+  try{
+    const result = calculateExercises(body);
+    return res.json(result);
+  }catch(exception) {
+    return res.status(400).json({ error: exception.message });
+  }
 });
 
 const PORT = 3002;
